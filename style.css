@@ -38,7 +38,7 @@ body {
 .item__img:hover {
   width: 150px;
 }
-span {
+.item__span {
   display: inline-block;
   background: white;
   padding: 0.125em 0.25em 0;
