@@ -3,6 +3,7 @@
 }
 body {
   font-family: Helvetica, sans-serif;
+  position: relative;
 }
 
 .plan {
@@ -11,13 +12,13 @@ body {
   grid-template-columns: repeat(6, 1fr);
   height: 100vh;
   grid-template-areas:
-    "i1 i5 . i13 . ."
-    ". . . . . ."
-    ". . . . i8 i11"
-    "i2 i7 . . . i6"
-    ". . . i12 i4 i17"
-    " . . . . . i9"
-    "i14 i3 . i15 i16 i10";
+    'i1 i5 . i13 . .'
+    '. . . . . .'
+    '. . . . i8 i11'
+    'i2 i7 . . . i6'
+    '. . . i12 i4 i17'
+    ' . . . . . i9'
+    'i14 i3 . i15 i16 i10';
 }
 
 .item {
@@ -40,9 +41,20 @@ body {
   width: 150px;
 }
 .item__span {
-  display: inline-block;
+  display: none;
   background: white;
   padding: 0.125em 0.25em 0;
+}
+
+button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.5em;
+  background: lightgray;
+}
+.active {
+  display: inline-block;
 }
 
 .item1 {
