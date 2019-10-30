@@ -44,20 +44,23 @@ body {
   width: 150px;
 }
 .item__span {
-  display: none;
+  opacity: 0;
+
   background: white;
   padding: 0.125em 0.25em 0;
 }
 
 button {
   position: absolute;
+  height: 70px;
+  width: 200px;
   top: 0;
   right: 0;
   font-size: 1.5em;
   background: lightgray;
 }
 .active {
-  display: inline-block;
+  opacity: 1;
 }
 
 .item1 {
