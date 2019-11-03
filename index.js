@@ -1,4 +1,4 @@
-const button = document.querySelector('button')
+const button = document.querySelector('.showNamesBtn')
 const names = document.querySelectorAll('.item__span')
 
 names.forEach(names => {
@@ -51,15 +51,18 @@ function shuffle(array) {
   return array
 }
 
-const newArray = shuffle(gridAreaArray)
-
 const students = document.querySelectorAll('.item')
 
 function placeStudents() {
+  const newArray = shuffle(gridAreaArray)
   console.log(newArray)
   students.forEach(
     (student, index) => (student.style.gridArea = newArray[index])
   )
 }
 
-placeStudents()
+const shuffleBtn = document.querySelector('.shuffleBtn')
+
+shuffleBtn.addEventListener('click', () => {
+  placeStudents()
+})
