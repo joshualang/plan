@@ -50,12 +50,20 @@ body {
   padding: 0.125em 0.25em 0;
 }
 
-button {
+.showNamesBtn {
   position: absolute;
   height: 70px;
   width: 200px;
   top: 0;
   right: 0;
+  font-size: 1.5em;
+  background: lightgray;
+}
+
+.shuffleBtn {
+  position: absolute;
+  top: 0;
+  right: 200px;
   font-size: 1.5em;
   background: lightgray;
 }
