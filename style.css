@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 body {
   font-family: Helvetica, sans-serif;
@@ -11,8 +13,9 @@ body {
   grid-template-rows: auto;
   grid-template-columns: repeat(6, 1fr);
   height: 100vh;
+  padding: 10px;
   grid-template-areas:
-    'i1 i5 . i13 . .'
+    'i1 i5 i13 . . .'
     '. . . . . .'
     '. . . . i8 i11'
     'i2 i7 . . . i6'
@@ -41,13 +44,16 @@ body {
   width: 150px;
 }
 .item__span {
-  display: none;
+  opacity: 0;
+
   background: white;
   padding: 0.125em 0.25em 0;
 }
 
 .showNamesBtn {
   position: absolute;
+  height: 70px;
+  width: 200px;
   top: 0;
   right: 0;
   font-size: 1.5em;
@@ -62,7 +68,7 @@ body {
   background: lightgray;
 }
 .active {
-  display: inline-block;
+  opacity: 1;
 }
 
 .item1 {
