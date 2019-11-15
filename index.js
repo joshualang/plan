@@ -13,19 +13,19 @@ let studentList = [
     name: 'Seydlitz',
     firstName: 'Philipp von',
     hTMLClass: 'item1',
-    seat: 1
+    seat: 1,
   },
   { name: 'Dayan', firstName: 'Davut', hTMLClass: 'item4', seat: 4 },
   {
     name: 'Bartolovic Resch',
     firstName: 'Ivana',
     hTMLClass: 'item10',
-    seat: 10
+    seat: 10,
   },
   { name: 'Chodak', firstName: 'Krystian', hTMLClass: 'item2', seat: 2 },
   { name: 'Niemann', firstName: 'Marilena', hTMLClass: 'item5', seat: 5 },
   { name: 'Bozhinova', firstName: 'Rayna', hTMLClass: 'item13', seat: 13 },
-  { name: 'Wisbar', firstName: 'Annemarie', hTMLClass: 'item3', seat: 3 }
+  { name: 'Wisbar', firstName: 'Annemarie', hTMLClass: 'item3', seat: 3 },
 ]
 
 let protocolDates = [
@@ -56,7 +56,7 @@ let protocolDates = [
   '2019-11-18',
   '2019-11-19',
   '2019-11-20',
-  '2019-11-21'
+  '2019-11-21',
 ]
 
 const showNamesBtn = document.querySelector('.js-showNamesBtn')
@@ -109,11 +109,12 @@ let gridAreaArray = [
   'i14',
   'i15',
   'i16',
-  'i17'
+  'i17',
 ]
 
 function shuffle(array) {
   const recorder = findRecorder(studentList, today)
+  console.log(recorder)
   let m = array.length
   let t
   let i
@@ -128,16 +129,18 @@ function shuffle(array) {
     array[m] = array[i]
     array[i] = t
   }
-  const recorderSeat = array[recorder.seat - 1]
-  let count = 0
-  array.forEach(item => {
-    if (item === 'i17') {
-      item = recorderSeat
-      array[count] = recorderSeat
-    }
-    count++
-  })
-  array[recorder.seat - 1] = 'i17'
+  if (recorder) {
+    const recorderSeat = array[recorder.seat - 1]
+    let count = 0
+    array.forEach(item => {
+      if (item === 'i17') {
+        item = recorderSeat
+        array[count] = recorderSeat
+      }
+      count++
+    })
+    array[recorder.seat - 1] = 'i17'
+  }
   return array
 }
 
@@ -191,6 +194,7 @@ function renderList(list, today) {
 }
 
 function findRecorder(list, today) {
+  recorder = false
   list.forEach(student => {
     const test = student.date.includes(today)
     if (test) {
