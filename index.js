@@ -194,12 +194,12 @@ function renderList(list, today) {
 }
 
 function findRecorder(list, today) {
-  recorder = false
   list.forEach(student => {
     const test = student.date.includes(today)
     if (test) {
       recorder = student
+      return recorder
     }
   })
-  return recorder
+  return false
 }
