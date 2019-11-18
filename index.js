@@ -114,7 +114,6 @@ let gridAreaArray = [
 
 function shuffle(array) {
   const recorder = findRecorder(studentList, today)
-  console.log(recorder)
   let m = array.length
   let t
   let i
@@ -129,7 +128,7 @@ function shuffle(array) {
     array[m] = array[i]
     array[i] = t
   }
-  if (recorder) {
+  if (recorder !== '') {
     const recorderSeat = array[recorder.seat - 1]
     let count = 0
     array.forEach(item => {
@@ -194,12 +193,12 @@ function renderList(list, today) {
 }
 
 function findRecorder(list, today) {
+  recorder = ''
   list.forEach(student => {
     const test = student.date.includes(today)
     if (test) {
       recorder = student
-      return recorder
     }
   })
-  return false
+  return recorder
 }
